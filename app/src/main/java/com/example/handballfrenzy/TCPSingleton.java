@@ -62,6 +62,7 @@ public class TCPSingleton extends Thread {
                 String line = br.readLine();
                 System.out.println("Recieved");
                 System.out.println("Msg: " + line);
+                //Notify Message
                 observer.messageRecieved(line);
             }
 
