@@ -61,7 +61,7 @@ public class TCPSingleton extends Thread {
             bw = new BufferedWriter(osw);
 
             while (true) {
-                Log.e("waiting", "waiting");
+                System.out.println("Waiting");
                 String line = br.readLine();
                 System.out.println("Recieved");
                 System.out.println("Msg: " + line);
@@ -77,13 +77,13 @@ public class TCPSingleton extends Thread {
         }
     }
 
-    public void sendMessage(){
+    public void sendMessage(String msg){
         new Thread(
                 () -> {
 
                     try {
 
-                        bw.write("msg" + "\n");
+                        bw.write(msg + "\n");
                         bw.flush();
 
                     } catch (IOException e) {

@@ -2,6 +2,7 @@ package com.example.handballfrenzy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,9 +52,10 @@ public class MainActivity extends AppCompatActivity implements onMessageListener
 
 
         if(msg.equals("Players Connected")){
-           runOnUiThread(()->{
-               Toast.makeText(this, "Cambio a instrucciones", Toast.LENGTH_SHORT).show();
-           });
+            Intent i = new Intent(this, instructionsReadyUp.class);
+            i.putExtra("player", ""+player);
+            startActivity(i);
+            finish();
         }
     }
 }
