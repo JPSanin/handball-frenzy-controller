@@ -10,13 +10,31 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        app:srcCompat="@drawable/start"/>
+        app:layout_constraintVertical_bias="0.4" />
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@android:color/background_light"
+        android:text="Press to continue"
+        android:textColor="#1A1A1A"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81"
+        app:strokeColor="#1A1A1A"
+        app:strokeWidth="2dp" />
 
     <Button
         android:id="@+id/btnConnect"
@@ -31,7 +49,7 @@
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811"
+        app:layout_constraintVertical_bias="0.81"
         app:strokeColor="#1A1A1A"
         app:strokeWidth="2dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

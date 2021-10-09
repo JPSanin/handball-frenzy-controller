@@ -1,5 +1,7 @@
 package com.example.handballfrenzy;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,6 +19,7 @@ public class TCPSingleton extends Thread {
     private Socket socket;
     private BufferedWriter bw;
     private BufferedReader br;
+
 
     //Observer
     private onMessageListener observer;
@@ -58,7 +61,7 @@ public class TCPSingleton extends Thread {
             bw = new BufferedWriter(osw);
 
             while (true) {
-                System.out.println("Waiting");
+                Log.e("waiting", "waiting");
                 String line = br.readLine();
                 System.out.println("Recieved");
                 System.out.println("Msg: " + line);
