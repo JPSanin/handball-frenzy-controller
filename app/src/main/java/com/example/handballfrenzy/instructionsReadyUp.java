@@ -2,6 +2,7 @@ package com.example.handballfrenzy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,11 @@ public class instructionsReadyUp extends AppCompatActivity  implements onMessage
 
     @Override
     public void messageRecieved(String msg) {
-
+        if(msg.equals("Players Ready")){
+            Intent i = new Intent(this, Controller.class);
+            i.putExtra("player", ""+player);
+            startActivity(i);
+            finish();
+        }
     }
 }
