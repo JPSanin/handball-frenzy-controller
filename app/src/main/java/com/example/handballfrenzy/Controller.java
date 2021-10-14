@@ -50,11 +50,33 @@ public class Controller extends AppCompatActivity implements onMessageListener{
         player= Integer.parseInt(getIntent().getExtras().getString("player"));
 
         if(player==1){
-            imgBack.setImageDrawable(getResources().getDrawable(R.drawable.bg1,null));
+            imgBack.setImageDrawable(getResources().getDrawable(R.drawable.c1,null));
         }
         if(player==2){
-            imgBack.setImageDrawable(getResources().getDrawable(R.drawable.bg2,null));
+            imgBack.setImageDrawable(getResources().getDrawable(R.drawable.c2,null));
         }
+
+
+        imgLeft.setOnClickListener((v)->{
+            tcp.sendMessage(player+","+"left");
+        } );
+
+        imgRight.setOnClickListener((v)->{
+            tcp.sendMessage(player+","+"right");
+        } );
+
+        imgUp.setOnClickListener((v)->{
+            tcp.sendMessage(player+","+"jump");
+        } );
+
+        imgShoot.setOnClickListener((v)->{
+            tcp.sendMessage(player+","+"shoot");
+        } );
+
+        imgSteal.setOnClickListener((v)->{
+            tcp.sendMessage(player+","+"steal");
+        } );
+
     }
 
     @Override
