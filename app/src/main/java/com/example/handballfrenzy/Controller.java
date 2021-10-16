@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Controller extends AppCompatActivity implements onMessageListener{
 
@@ -98,7 +100,7 @@ public class Controller extends AppCompatActivity implements onMessageListener{
                     txtScore2.setText(""+score1);
                 }
             });
-            tcp.sendMessage("1,goal");
+
         }
 
         if(msg.equals("2,goal")){
@@ -111,7 +113,21 @@ public class Controller extends AppCompatActivity implements onMessageListener{
                     txtScore1.setText(""+score2);
                 }
             });
-            tcp.sendMessage("2,goal");
         }
+
+        if(msg.equals("game over")){
+            imgBack.setImageDrawable(getResources().getDrawable(R.drawable.gameoverc,null));
+
+
+            imgLeft.setVisibility(View.INVISIBLE);
+            imgRight.setVisibility(View.INVISIBLE);
+            imgUp.setVisibility(View.INVISIBLE);
+            imgShoot.setVisibility(View.INVISIBLE);
+            imgSteal.setVisibility(View.INVISIBLE);
+            txtScore1.setVisibility(View.INVISIBLE);
+            txtScore2.setVisibility(View.INVISIBLE);
+
+        }
+
     }
 }
